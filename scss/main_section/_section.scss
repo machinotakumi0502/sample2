@@ -1,0 +1,210 @@
+@use "../variable/variable" as var;
+
+@mixin h2_style {
+  font-size: var.$h2_font_size;
+  text-align: center;
+}
+@mixin h3_style {
+  font-size: var.$h3_font_size;
+  text-align: center;
+}
+
+/* sec1 */
+#sec1 {
+  padding: 72px 0;
+  @extend .wrapper;
+  @include h2_style;
+  a{
+    color: var.$font_color_a;
+    h2{
+      width: 24%;
+      margin: auto;
+      &:hover{
+        opacity: var.$hover_opp;
+      }
+    }
+  }
+  #block_flex {
+    display: flex;
+    .block {
+      margin-top: 40px;
+      padding: 0 10px;
+      .img_inner {
+        text-align: center;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      a {
+        h3 {
+          @include h3_style;
+          color: var.$font_color_b;
+          background-color: var.$main_bg_clor;
+          border-radius: 4px;
+          margin: 8px 0 20px 0;
+          padding: 6px;
+          &:hover {
+            opacity: var.$hover_opp;
+            color: var.$font_color_b;
+          }
+        }
+      }
+      p {
+        font-size: var.$P_font_size;
+        text-align: center;
+        font-weight: var.$font-w;
+        line-height: var.$line-h;
+      }
+    }
+  }
+}
+/* sec1 responsive */
+@media (max-width: 768px) {
+  h2 {
+    font-size: var.$h2_font_size_res;
+  }
+  #sec1 {
+    a{
+      h2{
+        width: 63%;
+      }
+    }
+    #block_flex {
+      display: block;
+    }
+  }
+}
+
+/* sec2 */
+#sec2 {
+  background-color: var.$main_bg_clor;
+  #sec2_in {
+    @include h2_style;
+    @extend .wrapper;
+    padding: 30px 0 14px;
+    color: var.$font_color_b;
+    p {
+      font-size: var.$P_font_size;
+      color: var.$font_color_b;
+      padding: 15px 0 20px;
+      font-weight: var.$font-w;
+      line-height: var.$line-h;
+      width: 49%;
+      margin: 0 auto;
+    }
+    a {
+      p {
+        background: var.$btn_clor;
+        color: var.$font_color_b;
+        border-radius: 5px;
+        padding: 18px 32px 18px 32px;
+        width: 13%;
+        margin: auto;
+        &:hover {
+          opacity: var.$hover_opp;
+          background: var.$btn_clor;
+        }
+      }
+    }
+  }
+}
+/* sec2 responsive */
+@media (max-width: 768px) {
+  #sec2 {
+    #sec2_in {
+      p {
+        width: 100%;
+      }
+      a {
+        p {
+          width: 34%;
+        }
+      }
+    }
+  }
+}
+/* sec3 */
+#sec3 {
+  background-color: var.$sec3_bg_color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .hover {
+    width: 571px;
+    height: 380px;
+    position: relative;
+    .hover-img {
+      margin: 0;
+      padding: 0;
+    }
+    .hover-text {
+      position: absolute;
+      width: 561px;
+      height: 380px;
+      top: 0;
+      left: 0;
+      color: var.$font_color_b;
+      background-color: rgba(0, 0, 0, 0.65);
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      .text1 {
+        font-size: 22px;
+        margin: 120px 0 40px;
+        padding: 10px 20px;
+      }
+      .text2 {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+    }
+    &:hover {
+      .hover-text {
+        opacity: 1;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+/* sec3 responsive */
+@media (max-width: 768px) {
+  #sec3 {
+    display: block;
+    margin-bottom: 100px;
+    .hover {
+      width: 100%;
+      height: 100%;
+      .hover-img {
+        img {
+          width: 100%;
+        }
+      }
+      .hover-text {
+        position: unset;
+        width: 100%;
+        height: 100%;
+        color: var.$font_color_b;
+        background-color: var.$main_bg_clor;
+        opacity: 1;
+        text-align: center;
+        padding: 10px 0;
+        .text1 {
+          font-size: 13px;
+          margin: 0;
+          padding: 0;
+        }
+        .text2 {
+          font-size: 13px;
+          width: 80%;
+          margin: 0 auto;
+          padding: 10px 0 0 0;
+        }
+      }
+      &:hover {
+        .hover-text {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+}
