@@ -1,0 +1,162 @@
+@use "../variable/variable" as var;
+
+@mixin h2_style {
+  font-size: var.$h2_font_size;
+  text-align: center;
+}
+@mixin h3_style {
+  font-size: var.$h3_font_size;
+  text-align: center;
+}
+
+main{
+  width: 90%;
+  margin: 80px  auto  0px;
+  padding-bottom: 120px;
+  h2{
+    @include h2_style();
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .innner{
+    .contener{
+      display: flex;
+      justify-content: space-between;
+      .img_inner{
+        width: 100%;
+      }
+      .p_inner{
+        width: calc(100% - 10px);
+        p{
+          line-height: 62px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1589px){
+  main{
+    .innner{
+      .contener{
+        .p_inner{
+          p{
+            line-height: 50px;
+          }
+        }
+      }
+    }
+  }      
+}
+@media (max-width: 1414px){
+  main{
+    .innner{
+      .contener{
+        .p_inner{
+          p{
+            line-height: 37px;
+          }
+        }
+      }
+    }
+  }      
+}
+
+@media (max-width: 1330px){
+  main{
+    .innner{
+      .contener{
+        .img_inner{
+          img{
+            width: 80%;
+          }
+        }
+        .p_inner{
+          p{
+            line-height: 37px;
+          }
+        }
+      }
+    }
+  }      
+
+}
+@media (max-width: 1241px){
+  main{
+    .innner{
+      .contener{
+        .img_inner{
+          img{
+            width: 80%;
+          }
+        }
+        .p_inner{
+          p{
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }      
+}
+@media (max-width: 1153px){
+  main{
+    .innner{
+      .contener{
+        display: block;
+        .img_inner{
+          text-align: center;
+          img{
+            width: 80%;
+          }
+        }
+        .p_inner{
+          text-align: center;
+          width: 80%;
+          margin: 30px auto;
+          p{
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }      
+}
+@media (max-width: 768px){
+  main{
+    .innner{
+      .contener{
+        .p_inner{
+          
+          p{
+            line-height: 20px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }      
+
+}
+@media (max-width: 375px){
+  main{
+    h2{
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    .innner{
+      .contener{
+        .p_inner{
+          
+          p{
+            line-height: 20px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }      
+}
+
+

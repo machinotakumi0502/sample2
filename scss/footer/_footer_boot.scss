@@ -1,0 +1,27 @@
+@use "../variable/variable" as var;
+
+#ft {
+  background-color: var.$main_bg_clor;
+  #ft_in {
+    text-align: center;
+    p{
+      color: var.$font_color_b;
+      font-size: var.$copy_right_font_size;
+      font-family: 'Hiragino Kaku Gothic Pro N';
+      padding: 24px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* footer responsive*/
+@media (max-width: 768px) {
+  #ft {
+    #ft_in {
+      p {
+        font-size: var.$footer_font_size_res;
+        
+      }
+    }
+  }
+}

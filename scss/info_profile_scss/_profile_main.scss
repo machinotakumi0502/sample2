@@ -1,0 +1,125 @@
+@use "../variable/variable" as var;
+
+@mixin h2_style {
+  font-size: var.$h2_font_size;
+  text-align: center;
+}
+@mixin h3_style {
+  font-size: var.$h3_font_size;
+  text-align: center;
+}
+
+main{
+  @extend .wrapper;
+  margin: 30px  auto  0;
+  padding-bottom: 110px;
+  border-bottom: 1px black dotted;
+  h2{
+    @include h2_style();
+    margin-bottom: 50px;
+  }
+  table{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #dee2e7;
+    font-size: 17px;
+    tr{
+      border: 1px solid #dee2e7;
+      
+      th{
+        border-right: 1px solid #dee2e7;
+        padding: 20px 70px 20px 20px;
+        background: #edf6f3;;
+      }
+      td{
+        padding: 20px;
+      }
+    }
+  }
+}
+
+
+
+/* sec1 */
+#sec1 {
+  padding: 72px 0;
+  @extend .wrapper;
+  #block_flex {
+    display: flex;
+    .block {
+      margin-top: 40px;
+      padding: 0 10px;
+      .img_inner {
+        text-align: center;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+      a {
+        h3 {
+          @include h3_style;
+          color: var.$font_color_b;
+          background-color: var.$main_bg_clor;
+          border-radius: 4px;
+          margin: 8px 0 20px 0;
+          padding: 6px;
+          &:hover {
+            opacity: var.$hover_opp;
+            color: var.$font_color_b;
+          }
+        }
+      }
+      p {
+        font-size: var.$P_font_size;
+        text-align: center;
+        font-weight: var.$font-w;
+        line-height: var.$line-h;
+      }
+    }
+  }
+}
+
+@media (max-width: 1265px) {
+  main{
+    table{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1016px){
+  main{
+    table{
+      font-size: 14px;
+    }
+  }
+}
+@media(max-width: 871px){
+  main{
+    table{
+      tr{
+        th{
+          display: block;
+        }
+        td{
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main{
+    h2 {
+      font-size: 30px;
+    }
+  }
+  
+  #sec1 {
+    #block_flex {
+      display: block;
+    }
+  }
+}
+

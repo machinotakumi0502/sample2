@@ -1,0 +1,123 @@
+@use "../variable/variable" as var;
+@mixin table_frame_work {
+  margin-bottom: 50px;
+  tr {
+    text-align: left;
+    &:nth-child(1) {
+      th {
+        background-color: var.$th1_color;
+      }
+    }
+    th {
+      width: 21%;
+      padding: 20px;
+      background-color: var.$th2_color;
+      span {
+        float: right;
+      }
+    }
+    td {
+      padding: 15px 22px 15px 22px;
+      .three_right {
+        display: unset;
+        width: 15%;
+      }
+    }
+  }
+}
+
+main {
+  background-color: var.$form_back_ground_color;
+  padding-bottom: 80px;
+  #main_inner {
+    text-align: center;
+    h1 {
+      padding: 50px 0 70px 0;
+      font-size: 60px;
+      color: #135489;
+      text-shadow: 0 0 5px rgb(124 218 255);
+    }
+    #content {
+      background-color: white;
+      padding: 60px 60px;
+      .btn_cst {
+        padding: 10px 60px;
+        background-color: var.$form_btn_color;
+        border: var.$form_btn_color;
+        border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        color: white;
+        transition: all 0.5s;
+        user-select: none;
+        &:hover {
+          opacity: 0.8;
+          border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+          margin-top: 3px;
+        }
+      }
+      #table1 {
+        @include table_frame_work;
+      }
+      #table2 {
+        @include table_frame_work;
+      }
+    }
+  }
+}
+@mixin table_frame_work_res {
+  tr {
+    th {
+      display: block;
+      width: 100%;
+    }
+    td {
+      display: block;
+      width: 100%;
+      .w-50 {
+        width: 100% !important;
+      }
+      .w-75 {
+        width: 100% !important;
+      }
+      .three_right {
+        width: 26%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  main {
+    #main_inner {
+      h1 {
+        font-size: 33px;
+        padding-bottom: 30px;
+      }
+      #content {
+        p {
+          font-size: 14px;
+        }
+        #table1 {
+          @include table_frame_work_res;
+        }
+        #table2 {
+          @include table_frame_work_res;
+        }
+        .btn_cst {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #table1 {
+    tr {
+      th {
+        span {
+          float: left !important;
+        }
+      }
+    }
+  }
+}

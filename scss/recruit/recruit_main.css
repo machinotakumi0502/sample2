@@ -1,0 +1,87 @@
+/* index */
+/* header */
+/* section all */
+.wrapper, main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* sec1 */
+/* sec2 */
+/* sec3 */
+/* footer */
+/* contact */
+main {
+  margin: 30px auto 0;
+  padding-bottom: 110px;
+  border-bottom: 1px black dotted;
+}
+main h2 {
+  font-size: 43px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+main table {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #dee2e7;
+  font-size: 17px;
+}
+main table tr {
+  border: 1px solid #dee2e7;
+}
+main table tr th {
+  border-right: 1px solid #dee2e7;
+  padding: 20px 70px 20px 20px;
+  background: #edf6f3;
+}
+main table tr td {
+  padding: 20px;
+}
+main #entry h2 {
+  margin-top: 30px;
+}
+main #entry .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+main #entry .logo img {
+  margin-right: 20px;
+}
+
+@media (max-width: 1265px) {
+  main table {
+    width: 100%;
+  }
+}
+@media (max-width: 1016px) {
+  main table {
+    font-size: 14px;
+  }
+}
+@media (max-width: 871px) {
+  main table tr th {
+    display: block;
+  }
+  main table tr td {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  main h2 {
+    font-size: 30px;
+  }
+  main #entry .logo {
+    display: inline-block;
+    text-align: center;
+  }
+  main #entry .logo img {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+/*# sourceMappingURL=recruit_main.css.map */
